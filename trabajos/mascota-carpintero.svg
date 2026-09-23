@@ -1,0 +1,38 @@
+<svg viewBox="0 0 48 56" xmlns="http://www.w3.org/2000/svg">
+  <ellipse cx="24" cy="52" rx="13" ry="3" fill="#000000" opacity=".15"/>
+
+  <rect x="15" y="37" width="7" height="12" rx="3.5" fill="#2b5540"/>
+  <rect x="26" y="37" width="7" height="12" rx="3.5" fill="#2b5540"/>
+
+  <rect x="6" y="22" width="8" height="16" rx="4" fill="#f0c199" transform="rotate(-12 10 22)"/>
+  <rect x="34" y="22" width="8" height="16" rx="4" fill="#f0c199" transform="rotate(16 38 22)"/>
+
+  <path d="M11 22 q13 6 26 0 l-2 20 a3 3 0 01-3 2.6 H16 a3 3 0 01-3-2.6 Z" fill="#e8732c"/>
+  <rect x="15.5" y="16" width="5" height="10" rx="1.8" fill="#e8732c"/>
+  <rect x="27.5" y="16" width="5" height="10" rx="1.8" fill="#e8732c"/>
+  <circle cx="18.5" cy="30" r="1.8" fill="#c85f1f"/>
+  <circle cx="29.5" cy="30" r="1.8" fill="#c85f1f"/>
+
+  <ellipse cx="24" cy="15" rx="11" ry="10.5" fill="#f0c199"/>
+  <ellipse cx="16.5" cy="16" rx="2.3" ry="2.6" fill="#c98a56"/>
+  <ellipse cx="31.5" cy="16" rx="2.3" ry="2.6" fill="#c98a56"/>
+
+  <g transform="rotate(30 33 15)">
+    <rect x="31.5" y="6" width="3" height="15" rx="1.2" fill="#f2c86e"/>
+    <path d="M31.5 6 l1.5 -3.4 l1.5 3.4 z" fill="#2a2a28"/>
+    <rect x="31.5" y="17.5" width="3" height="2.6" fill="#c9834f"/>
+  </g>
+
+  <path d="M12.5 14 a11.5 11.5 0 0123 0 z" fill="#1f3d2e"/>
+  <rect x="11" y="11.4" width="26" height="4" rx="2" fill="#1f3d2e"/>
+  <rect x="11" y="11.4" width="26" height="1.7" rx="0.8" fill="#2b5540"/>
+
+  <circle cx="19.5" cy="17" r="1.5" fill="#2a2a28"/>
+  <circle cx="28.5" cy="17" r="1.5" fill="#2a2a28"/>
+  <path d="M19.5 22 q4.5 3 9 0" stroke="#c9834f" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+
+  <g transform="rotate(-32 8 34)">
+    <rect x="6.3" y="27" width="3.2" height="17" rx="1.5" fill="#8a6144"/>
+    <rect x="2" y="22" width="11.8" height="7.5" rx="2" fill="#6b6862"/>
+  </g>
+</svg>
