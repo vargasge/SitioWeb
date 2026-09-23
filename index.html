@@ -267,7 +267,7 @@
           <div><b>Teléfono</b><span>(443) 316 2758 · WhatsApp (443) 685 9057</span></div>
         </div>
       </div>
-      <iframe class="mapa-embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Ubicación Triplay y Molduras Los Pinos" src="https://www.google.com/maps?q=Calle+Calzada+la+Huerta+2275,+Col.+Los+Pinos+de+Michoacan,+Morelia,+Michoacan,+58057&output=embed"></iframe>
+      <div id="mapa" class="mapa-embed" role="img" aria-label="Ubicación Triplay y Molduras Los Pinos"></div>
     </div>
   </section>
 </main>
@@ -293,7 +293,37 @@ function buscar(){
   if(primera) primera.scrollIntoView({behavior:'smooth', block:'center'});
 }
 document.getElementById('buscar').addEventListener('keyup', e=>{ if(e.key==='Enter') buscar(); });
+
+function initMapa(){
+  var ubicacion = {lat: 19.6895503, lng: -101.2135889};
+  var mapa = new google.maps.Map(document.getElementById('mapa'), {
+    center: ubicacion,
+    zoom: 16,
+    disableDefaultUI: true,
+    zoomControl: true
+  });
+  var marcador = new google.maps.Marker({
+    position: ubicacion,
+    map: mapa,
+    icon: {
+      url: 'trabajos/mascota-carpintero-pin.svg',
+      scaledSize: new google.maps.Size(64, 64),
+      anchor: new google.maps.Point(32, 32)
+    },
+    title: 'Triplay y Molduras Los Pinos'
+  });
+  var infoVisitanos = new google.maps.InfoWindow({
+    content: '<div style="font-family:\'Segoe UI\',Arial,sans-serif;padding:2px 4px;max-width:210px;">' +
+      '<strong>Triplay y Molduras Los Pinos</strong><br>' +
+      'Calle Calzada la Huerta #2275<br>' +
+      '<a href="https://www.google.com/maps/dir/?api=1&destination=19.6895503,-101.2135889" target="_blank" rel="noopener" style="color:#e8732c;font-weight:600;">Cómo llegar &rarr;</a>' +
+      '</div>'
+  });
+  marcador.addListener('click', function(){ infoVisitanos.open(mapa, marcador); });
+}
 </script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDbyi-7UO4aaPlKDD0lczBLFhjEW_xwwGA&loading=async&callback=initMapa" async defer></script>
 
 </body>
 </html>
