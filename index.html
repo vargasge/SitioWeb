@@ -108,8 +108,6 @@
   .dato span{color:var(--gris);}
   .mapa-ph{background:var(--crema); border:1px dashed var(--borde); border-radius:14px; height:220px; display:flex; align-items:center; justify-content:center; color:var(--gris); font-size:13px; text-align:center; padding:20px;}
   .mapa-embed{width:100%; height:220px; border:0; border-radius:14px;}
-  .link-maps{display:block; text-align:center; margin-top:10px; font-size:13px; font-weight:700; color:var(--naranja-osc);}
-  .link-maps:hover{text-decoration:underline;}
 
   footer{background:var(--verde); color:#cfe0d6; padding:28px 24px; text-align:center; font-size:13px;}
   footer strong{color:#fff;}
@@ -270,7 +268,6 @@
         </div>
       </div>
       <div id="mapa" class="mapa-embed" role="img" aria-label="Ubicación Triplay y Molduras Los Pinos"></div>
-      <a id="link-maps" class="link-maps" href="https://www.google.com/maps/dir/?api=1&destination=19.6895503,-101.2135889" target="_blank" rel="noopener">Abrir en Google Maps &rarr;</a>
     </div>
   </section>
 </main>
@@ -302,17 +299,13 @@ function initMapa(){
   var mapa = new google.maps.Map(document.getElementById('mapa'), {
     center: {lat: 19.6895503, lng: -101.2135889},
     zoom: 16,
-    disableDefaultUI: true,
-    draggable: false,
-    scrollwheel: false,
-    disableDoubleClickZoom: true,
-    keyboardShortcuts: false
+    gestureHandling: 'cooperative'
   });
   new google.maps.Geocoder().geocode({address: direccion}, function(resultados, estado){
     if(estado !== 'OK' || !resultados[0]) return;
     var ubicacion = resultados[0].geometry.location;
     mapa.setCenter(ubicacion);
-    new google.maps.Marker({
+    var marcador = new google.maps.Marker({
       position: ubicacion,
       map: mapa,
       icon: {
@@ -322,7 +315,14 @@ function initMapa(){
       },
       title: 'Triplay y Molduras Los Pinos'
     });
-    document.getElementById('link-maps').href = 'https://www.google.com/maps/dir/?api=1&destination=' + ubicacion.lat() + ',' + ubicacion.lng();
+    var infoVisitanos = new google.maps.InfoWindow({
+      content: '<div style="font-family:\'Segoe UI\',Arial,sans-serif;padding:2px 4px;max-width:210px;">' +
+        '<strong>Triplay y Molduras Los Pinos</strong><br>' +
+        'Calle Calzada la Huerta #2275<br>' +
+        '<a href="https://www.google.com/maps/dir/?api=1&destination=' + ubicacion.lat() + ',' + ubicacion.lng() + '" target="_blank" rel="noopener" style="color:#e8732c;font-weight:600;">Cómo llegar &rarr;</a>' +
+        '</div>'
+    });
+    marcador.addListener('click', function(){ infoVisitanos.open(mapa, marcador); });
   });
 }
 </script>
