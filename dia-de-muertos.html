@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calaveritas y Letreros de Altar — Corte Láser | Los Pinos</title>
+<style>
+  :root{
+    --naranja:#e8732c;
+    --naranja-osc:#c85f1f;
+    --verde:#1f3d2e;
+    --verde-clr:#2b5540;
+    --morado:#6b3a5e;
+    --crema:#faf7f2;
+    --texto:#2a2a28;
+    --gris:#6b6862;
+    --borde:#e7e1d6;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{font-family:'Segoe UI',Arial,sans-serif; color:var(--texto); background:var(--crema); line-height:1.5;}
+  a{text-decoration:none; color:inherit;}
+  img,svg{display:block;}
+
+  header{position:sticky; top:0; z-index:50; background:#fff; border-bottom:1px solid var(--borde);}
+  .header-main{display:flex; align-items:center; gap:20px; padding:14px 24px; max-width:1100px; margin:0 auto;}
+  .logo{display:flex; align-items:center; gap:10px; font-weight:700; font-size:17px; white-space:nowrap;}
+  .logo svg{width:30px; height:30px;}
+  .logo span small{display:block; font-weight:400; font-size:10px; color:var(--gris); letter-spacing:.03em;}
+  .volver{margin-left:auto; font-size:13px; color:var(--gris); font-weight:600;}
+  .volver:hover{color:var(--naranja-osc);}
+  .btn-wsp{background:#25D366; color:#fff; padding:10px 18px; border-radius:24px; font-weight:600; font-size:14px; display:flex; align-items:center; gap:8px; white-space:nowrap;}
+  .btn-wsp svg{width:18px; height:18px; fill:#fff;}
+
+  .picado{height:34px; background:repeating-linear-gradient(-55deg, var(--naranja) 0 16px, var(--morado) 16px 32px, var(--verde-clr) 32px 48px); clip-path:polygon(0 0,100% 0,100% 40%,97% 100%,94% 40%,91% 100%,88% 40%,85% 100%,82% 40%,79% 100%,76% 40%,73% 100%,70% 40%,67% 100%,64% 40%,61% 100%,58% 40%,55% 100%,52% 40%,49% 100%,46% 40%,43% 100%,40% 40%,37% 100%,34% 40%,31% 100%,28% 40%,25% 100%,22% 40%,19% 100%,16% 40%,13% 100%,10% 40%,7% 100%,4% 40%,1% 100%,0 40%);}
+
+  .hero{background:linear-gradient(135deg, var(--morado) 0%, var(--verde) 60%, var(--verde-clr) 100%); color:#fff; padding:54px 24px 60px; text-align:center;}
+  .hero .kicker{color:#f3c98a; font-weight:700; letter-spacing:.08em; font-size:13px; text-transform:uppercase; margin-bottom:10px;}
+  .hero h1{font-size:clamp(26px,4.2vw,42px); margin-bottom:14px;}
+  .hero p{font-size:16px; color:#ece6df; max-width:560px; margin:0 auto 28px;}
+  .hero-cta{display:flex; gap:14px; justify-content:center; flex-wrap:wrap;}
+  .btn{padding:13px 26px; border-radius:26px; font-weight:700; font-size:15px; display:inline-flex; align-items:center; gap:8px;}
+  .btn-naranja{background:var(--naranja); color:#fff;}
+  .btn-naranja:hover{background:var(--naranja-osc);}
+  .btn-fuera{border:2px solid #fff; color:#fff;}
+
+  main{max-width:1100px; margin:0 auto; padding:52px 24px;}
+  .titulo-seccion{text-align:center; margin-bottom:34px;}
+  .titulo-seccion h2{font-size:26px; margin-bottom:6px;}
+  .titulo-seccion p{color:var(--gris); font-size:14px;}
+
+  .productos{display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:24px; margin-bottom:58px;}
+  .prod{background:#fff; border:1px solid var(--borde); border-radius:16px; padding:30px; text-align:center;}
+  .prod .icono{width:76px; height:76px; margin:0 auto 18px; background:#fdf1e7; border-radius:50%; display:flex; align-items:center; justify-content:center;}
+  .prod .icono svg{width:38px; height:38px; stroke:var(--naranja-osc);}
+  .prod h3{font-size:19px; margin-bottom:8px;}
+  .prod p{font-size:14px; color:var(--gris); margin-bottom:18px;}
+  .prod .etiqueta{display:inline-block; background:#f3e8ee; color:var(--morado); font-size:12px; font-weight:700; padding:5px 12px; border-radius:20px; margin-bottom:14px;}
+  .prod a.pedir{color:var(--naranja-osc); font-weight:700; font-size:14px;}
+  .prod a.pedir:hover{text-decoration:underline;}
+
+  .pasos{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:24px; margin-bottom:58px;}
+  .paso{text-align:center; padding:10px;}
+  .paso .num{width:38px; height:38px; border-radius:50%; background:var(--verde); color:#fff; display:flex; align-items:center; justify-content:center; font-weight:700; margin:0 auto 12px;}
+  .paso h4{font-size:15px; margin-bottom:6px;}
+  .paso p{font-size:13px; color:var(--gris);}
+
+  .aviso{background:#fdf1e7; border:1px solid #f3d5b8; border-radius:14px; padding:20px 26px; display:flex; gap:14px; align-items:flex-start; margin-bottom:58px;}
+  .aviso svg{width:24px; height:24px; stroke:var(--naranja-osc); flex-shrink:0; margin-top:2px;}
+  .aviso p{font-size:14px;}
+  .aviso b{display:block; margin-bottom:2px;}
+
+  .galeria{display:grid; grid-template-columns:repeat(auto-fill,minmax(160px,1fr)); gap:14px; margin-bottom:20px;}
+  .galeria-ph{aspect-ratio:1; background:#fff; border:1px dashed var(--borde); border-radius:12px; display:flex; align-items:center; justify-content:center; color:var(--gris); font-size:12px; text-align:center; padding:10px;}
+
+  footer{background:var(--verde); color:#cfe0d6; padding:28px 24px; text-align:center; font-size:13px;}
+  footer strong{color:#fff;}
+  footer a{color:#f3c98a; font-weight:600;}
+
+  .wsp-flotante{position:fixed; bottom:24px; right:24px; width:58px; height:58px; background:#25D366; border-radius:50%; display:flex; align-items:center; justify-content:center; box-shadow:0 6px 18px rgba(0,0,0,.25); z-index:60;}
+  .wsp-flotante svg{width:30px; height:30px; fill:#fff;}
+
+  @media (max-width:640px){
+    .hero{padding:44px 18px 50px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-main">
+    <a class="logo" href="index.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="var(--verde)" stroke-width="1.8"><path d="M12 2l5 8h-3l4 6h-4v4h-4v-4H6l4-6H7z"/></svg>
+      <span>TRIPLAY Y MOLDURAS<br><small>LOS PINOS</small></span>
+    </a>
+    <a class="volver" href="index.html">&larr; Todas las categorías</a>
+    <a class="btn-wsp" href="https://wa.me/5210000000000?text=Hola,%20quiero%20preguntar%20por%20las%20calaveritas%20y%20letreros%20de%20altar" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 00-8.5 15.2L2 22l4.9-1.5A10 10 0 1012 2zm5.8 14.2c-.2.6-1.2 1.2-1.7 1.3-.4.1-1 .1-1.6-.1-.4-.1-.9-.3-1.5-.6-2.6-1.1-4.3-3.8-4.5-4-.1-.2-1-1.4-1-2.6s.6-1.8.9-2c.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5.2.5.7 1.8.8 1.9.1.2.1.3 0 .5-.1.2-.1.3-.3.5l-.4.5c-.1.2-.3.3-.1.6.2.3.9 1.4 1.9 2.3 1.3 1.1 2.3 1.5 2.7 1.7.3.1.5.1.6-.1l.6-.7c.2-.3.4-.2.7-.1l1.7.8c.2.1.4.2.4.3.1.2.1.7-.1 1.3z"/></svg>
+      WhatsApp
+    </a>
+  </div>
+</header>
+
+<div class="picado"></div>
+
+<section class="hero">
+  <div class="kicker">Día de Muertos · Corte láser personalizado</div>
+  <h1>Calaveritas con nombre y letreros para tu altar</h1>
+  <p>Cortados a láser y personalizados con el nombre que nos digas. Perfectos para tu ofrenda o para regalar.</p>
+  <div class="hero-cta">
+    <a class="btn btn-naranja" href="https://wa.me/5210000000000?text=Hola,%20quiero%20una%20calaverita%20con%20nombre" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+    <a class="btn btn-fuera" href="#productos">Ver productos</a>
+  </div>
+</section>
+
+<div class="picado"></div>
+
+<main>
+  <section id="productos">
+    <div class="titulo-seccion">
+      <h2>Lo que puedes pedir</h2>
+      <p>Todo se corta a la medida y con el nombre o texto que tú elijas</p>
+    </div>
+    <div class="productos">
+
+      <div class="prod">
+        <div class="icono">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M12 3c-4 0-7 2.7-7 7 0 2.6 1.3 4.3 2.5 5.5.4.4.5.7.5 1.2V19a1 1 0 001 1h6a1 1 0 001-1v-2.3c0-.5.1-.8.5-1.2C17.7 14.3 19 12.6 19 10c0-4.3-3-7-7-7z"/><circle cx="9.3" cy="10.5" r="1.3"/><circle cx="14.7" cy="10.5" r="1.3"/><path d="M9.5 14.5c.8.6 1.2.6 2.5.6s1.7 0 2.5-.6"/></svg>
+        </div>
+        <span class="etiqueta">Personalizada</span>
+        <h3>Calaverita con nombre</h3>
+        <p>Figura de calaverita cortada a láser con el nombre grabado. Para colgar, para la ofrenda o para regalar. Tú eliges tamaño y acabado.</p>
+        <a class="pedir" href="https://wa.me/5210000000000?text=Hola,%20quiero%20una%20calaverita%20con%20nombre" target="_blank" rel="noopener">Pregunta tu precio por WhatsApp →</a>
+      </div>
+
+      <div class="prod">
+        <div class="icono">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="1.5"/><line x1="6.5" y1="10" x2="17.5" y2="10"/><line x1="6.5" y1="13.5" x2="14" y2="13.5"/></svg>
+        </div>
+        <span class="etiqueta">Personalizado</span>
+        <h3>Letrero para altar</h3>
+        <p>Letrero cortado a láser para tu ofrenda: "En memoria de...", nombres, o el mensaje que quieras dedicar. Ideal para acompañar la foto en el altar.</p>
+        <a class="pedir" href="https://wa.me/5210000000000?text=Hola,%20quiero%20un%20letrero%20para%20mi%20altar" target="_blank" rel="noopener">Pregunta tu precio por WhatsApp →</a>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <div class="titulo-seccion">
+      <h2>¿Cómo se pide?</h2>
+    </div>
+    <div class="pasos">
+      <div class="paso">
+        <div class="num">1</div>
+        <h4>Escríbenos por WhatsApp</h4>
+        <p>Dinos el nombre o texto que quieres y, si tienes, una idea de tamaño</p>
+      </div>
+      <div class="paso">
+        <div class="num">2</div>
+        <h4>Te confirmamos precio</h4>
+        <p>Te mandamos el precio y, si aplica, una vista previa antes de cortar</p>
+      </div>
+      <div class="paso">
+        <div class="num">3</div>
+        <h4>Recoges en tienda</h4>
+        <p>Te avisamos cuando esté listo — pasas por él o lo coordinamos</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="aviso">
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+    <p><b>Pide con tiempo</b>Al ser personalizado, cada pieza se corta después de confirmar el diseño contigo. Entre más pronto nos escribas, con más calma te lo tenemos listo para tu ofrenda.</p>
+  </div>
+
+  <section>
+    <div class="titulo-seccion">
+      <h2>Ejemplos</h2>
+      <p>[Espacio para fotos reales de piezas ya entregadas]</p>
+    </div>
+    <div class="galeria">
+      <div class="galeria-ph">Foto de ejemplo</div>
+      <div class="galeria-ph">Foto de ejemplo</div>
+      <div class="galeria-ph">Foto de ejemplo</div>
+      <div class="galeria-ph">Foto de ejemplo</div>
+    </div>
+  </section>
+</main>
+
+<div class="picado"></div>
+
+<a class="wsp-flotante" href="https://wa.me/5210000000000?text=Hola,%20quiero%20preguntar%20por%20las%20calaveritas%20y%20letreros%20de%20altar" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 00-8.5 15.2L2 22l4.9-1.5A10 10 0 1012 2zm5.8 14.2c-.2.6-1.2 1.2-1.7 1.3-.4.1-1 .1-1.6-.1-.4-.1-.9-.3-1.5-.6-2.6-1.1-4.3-3.8-4.5-4-.1-.2-1-1.4-1-2.6s.6-1.8.9-2c.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5.2.5.7 1.8.8 1.9.1.2.1.3 0 .5-.1.2-.1.3-.3.5l-.4.5c-.1.2-.3.3-.1.6.2.3.9 1.4 1.9 2.3 1.3 1.1 2.3 1.5 2.7 1.7.3.1.5.1.6-.1l.6-.7c.2-.3.4-.2.7-.1l1.7.8c.2.1.4.2.4.3.1.2.1.7-.1 1.3z"/></svg>
+</a>
+
+<footer>
+  <strong>Triplay y Molduras Los Pinos</strong> — <a href="index.html">triplaylospinos.com</a><br>
+  Corte láser a la medida
+</footer>
+
+</body>
+</html>
