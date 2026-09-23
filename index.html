@@ -295,31 +295,35 @@ function buscar(){
 document.getElementById('buscar').addEventListener('keyup', e=>{ if(e.key==='Enter') buscar(); });
 
 function initMapa(){
-  var ubicacion = {lat: 19.6895503, lng: -101.2135889};
+  var direccion = 'Calle Calzada la Huerta 2275, Col. Los Pinos de Michoacan, Morelia, Michoacan, 58057';
   var mapa = new google.maps.Map(document.getElementById('mapa'), {
-    center: ubicacion,
+    center: {lat: 19.6895503, lng: -101.2135889},
     zoom: 16,
-    disableDefaultUI: true,
-    zoomControl: true
+    gestureHandling: 'cooperative'
   });
-  var marcador = new google.maps.Marker({
-    position: ubicacion,
-    map: mapa,
-    icon: {
-      url: 'trabajos/mascota-carpintero-pin.svg',
-      scaledSize: new google.maps.Size(64, 64),
-      anchor: new google.maps.Point(32, 32)
-    },
-    title: 'Triplay y Molduras Los Pinos'
+  new google.maps.Geocoder().geocode({address: direccion}, function(resultados, estado){
+    if(estado !== 'OK' || !resultados[0]) return;
+    var ubicacion = resultados[0].geometry.location;
+    mapa.setCenter(ubicacion);
+    var marcador = new google.maps.Marker({
+      position: ubicacion,
+      map: mapa,
+      icon: {
+        url: 'trabajos/mascota-carpintero-pin.svg',
+        scaledSize: new google.maps.Size(64, 64),
+        anchor: new google.maps.Point(32, 32)
+      },
+      title: 'Triplay y Molduras Los Pinos'
+    });
+    var infoVisitanos = new google.maps.InfoWindow({
+      content: '<div style="font-family:\'Segoe UI\',Arial,sans-serif;padding:2px 4px;max-width:210px;">' +
+        '<strong>Triplay y Molduras Los Pinos</strong><br>' +
+        'Calle Calzada la Huerta #2275<br>' +
+        '<a href="https://www.google.com/maps/dir/?api=1&destination=' + ubicacion.lat() + ',' + ubicacion.lng() + '" target="_blank" rel="noopener" style="color:#e8732c;font-weight:600;">Cómo llegar &rarr;</a>' +
+        '</div>'
+    });
+    marcador.addListener('click', function(){ infoVisitanos.open(mapa, marcador); });
   });
-  var infoVisitanos = new google.maps.InfoWindow({
-    content: '<div style="font-family:\'Segoe UI\',Arial,sans-serif;padding:2px 4px;max-width:210px;">' +
-      '<strong>Triplay y Molduras Los Pinos</strong><br>' +
-      'Calle Calzada la Huerta #2275<br>' +
-      '<a href="https://www.google.com/maps/dir/?api=1&destination=19.6895503,-101.2135889" target="_blank" rel="noopener" style="color:#e8732c;font-weight:600;">Cómo llegar &rarr;</a>' +
-      '</div>'
-  });
-  marcador.addListener('click', function(){ infoVisitanos.open(mapa, marcador); });
 }
 </script>
 
