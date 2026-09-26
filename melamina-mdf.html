@@ -39,6 +39,13 @@
   .volver:hover{color:var(--naranja-osc);}
   .btn-wsp{background:#25D366; color:#fff; padding:10px 18px; border-radius:24px; font-weight:600; font-size:14px; display:flex; align-items:center; gap:8px; white-space:nowrap;}
   .btn-wsp svg{width:18px; height:18px; fill:#fff;}
+  .volver-corto{display:none;}
+  @media (max-width:640px){
+    .header-main{gap:12px; padding:12px 16px;}
+    .logo span{display:none;}
+    .volver-largo{display:none;}
+    .volver-corto{display:inline;}
+  }
 
   .hero{background:linear-gradient(135deg, var(--verde) 0%, var(--verde-clr) 100%); color:#fff; padding:48px 24px 54px; text-align:center;}
   .hero .kicker{color:#f3c98a; font-weight:700; letter-spacing:.08em; font-size:13px; text-transform:uppercase; margin-bottom:10px;}
@@ -100,7 +107,7 @@
       <img src="trabajos/logo-tlp.jpg" alt="Triplay y Molduras Los Pinos">
       <span>TRIPLAY Y MOLDURAS<br><small>LOS PINOS</small></span>
     </a>
-    <a class="volver" href="index.html">&larr; Todas las categorías</a>
+    <a class="volver" href="index.html">&larr; <span class="volver-largo">Todas las categorías</span><span class="volver-corto">Inicio</span></a>
     <a class="btn-wsp" href="https://wa.me/5214436859057?text=Hola,%20quiero%20preguntar%20por%20colores%20de%20melamina%2FMDF" target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 00-8.5 15.2L2 22l4.9-1.5A10 10 0 1012 2zm5.8 14.2c-.2.6-1.2 1.2-1.7 1.3-.4.1-1 .1-1.6-.1-.4-.1-.9-.3-1.5-.6-2.6-1.1-4.3-3.8-4.5-4-.1-.2-1-1.4-1-2.6s.6-1.8.9-2c.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5.2.5.7 1.8.8 1.9.1.2.1.3 0 .5-.1.2-.1.3-.3.5l-.4.5c-.1.2-.3.3-.1.6.2.3.9 1.4 1.9 2.3 1.3 1.1 2.3 1.5 2.7 1.7.3.1.5.1.6-.1l.6-.7c.2-.3.4-.2.7-.1l1.7.8c.2.1.4.2.4.3.1.2.1.7-.1 1.3z"/></svg>
       WhatsApp
