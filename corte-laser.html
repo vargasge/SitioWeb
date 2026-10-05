@@ -72,8 +72,11 @@
   .ocasiones{display:flex; gap:10px; flex-wrap:wrap; justify-content:center; margin-bottom:44px;}
   .ocasiones span{background:#fff; border:1px solid var(--borde); padding:8px 15px; border-radius:20px; font-size:13px; font-weight:600;}
 
-  .galeria{display:grid; grid-template-columns:repeat(2,1fr); gap:12px; margin-bottom:48px;}
-  @media (min-width:600px){ .galeria{grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:16px;} }
+  .galeria{display:grid; grid-template-columns:repeat(2,1fr); grid-auto-flow:dense; gap:12px; margin-bottom:48px;}
+  @media (min-width:600px){ .galeria{grid-template-columns:repeat(3,1fr); gap:16px;} }
+  @media (min-width:900px){ .galeria{grid-template-columns:repeat(4,1fr);} }
+  .trabajo.ancho{grid-column:span 2;}
+  .trabajo.ancho .ver-grande img{aspect-ratio:1.55;}
   .trabajo{background:#fff; border:1px solid var(--borde); border-radius:14px; overflow:hidden; transition:transform .15s, box-shadow .15s;}
   .trabajo:hover{transform:translateY(-3px); box-shadow:0 10px 24px rgba(31,61,46,.12);}
   .ver-grande{display:block; background:#e9e6df; cursor:zoom-in;}
@@ -95,7 +98,7 @@
   #visor{border:0; padding:0; margin:auto; background:transparent; max-width:100vw; max-height:100vh; overflow:visible;}
   #visor::backdrop{background:rgba(12,22,17,.86);}
   .visor-caja{position:relative; display:flex; flex-direction:column; align-items:center; gap:12px; padding:8px;}
-  .visor-caja img{max-width:min(90vw,640px); max-height:78vh; width:auto; height:auto; border-radius:12px; background:#111;}
+  .visor-caja img{max-width:min(92vw,1000px); max-height:78vh; width:auto; height:auto; border-radius:12px; background:#111;}
   .visor-nombre{color:#fff; font-weight:700; font-size:17px; text-align:center;}
   .visor-cerrar{position:absolute; top:-6px; right:-6px; width:40px; height:40px; border:0; border-radius:50%; background:#fff; color:#222; font-size:24px; line-height:1; cursor:pointer; box-shadow:0 4px 14px rgba(0,0,0,.45);}
 
@@ -167,21 +170,21 @@
       <p>Piezas reales hechas por nosotros — toca una para verla en grande</p>
     </div>
     <div class="galeria">
-      <figure class="trabajo">
+      <figure class="trabajo ancho">
         <a class="ver-grande" href="trabajos/laser/letrero-bautizo-g.jpg" data-nombre="Letrero con nombre" target="_blank" rel="noopener" aria-label="Ver Letrero con nombre en grande">
-          <img src="trabajos/laser/letrero-bautizo.jpg" alt="Letrero de madera cortado a láser con nombre para bautizo" width="600" height="800" loading="lazy">
+          <img src="trabajos/laser/letrero-bautizo-ancho.jpg" alt="Letrero de madera cortado a láser con nombre para bautizo" width="1240" height="800" loading="lazy">
         </a>
         <figcaption>Letrero con nombre</figcaption>
       </figure>
-      <figure class="trabajo">
+      <figure class="trabajo ancho">
         <a class="ver-grande" href="trabajos/laser/letrero-graduada-g.jpg" data-nombre="Letrero para graduación" target="_blank" rel="noopener" aria-label="Ver Letrero para graduación en grande">
-          <img src="trabajos/laser/letrero-graduada.jpg" alt="Letrero de madera Graduada cortado a láser" width="600" height="800" loading="lazy">
+          <img src="trabajos/laser/letrero-graduada-ancho.jpg" alt="Letrero de madera Graduada cortado a láser" width="1240" height="800" loading="lazy">
         </a>
         <figcaption>Letrero para graduación</figcaption>
       </figure>
-      <figure class="trabajo">
+      <figure class="trabajo ancho">
         <a class="ver-grande" href="trabajos/laser/toppers-pastel-g.jpg" data-nombre="Toppers para pastel" target="_blank" rel="noopener" aria-label="Ver Toppers para pastel en grande">
-          <img src="trabajos/laser/toppers-pastel.jpg" alt="Toppers de madera para pastel cortados a láser" width="600" height="800" loading="lazy">
+          <img src="trabajos/laser/toppers-pastel-ancho.jpg" alt="Toppers de madera para pastel cortados a láser" width="1240" height="800" loading="lazy">
         </a>
         <figcaption>Toppers para pastel</figcaption>
       </figure>
@@ -257,9 +260,9 @@
         </a>
         <figcaption>Llaveros con tu logo</figcaption>
       </figure>
-      <figure class="trabajo">
+      <figure class="trabajo ancho">
         <a class="ver-grande" href="trabajos/laser/pedido-mayoreo-g.jpg" data-nombre="Pedidos por mayoreo" target="_blank" rel="noopener" aria-label="Ver Pedidos por mayoreo en grande">
-          <img src="trabajos/laser/pedido-mayoreo.jpg" alt="Cajas de madera listas para un pedido por mayoreo" width="600" height="800" loading="lazy">
+          <img src="trabajos/laser/pedido-mayoreo-ancho.jpg" alt="Cajas de madera listas para un pedido por mayoreo" width="1240" height="800" loading="lazy">
         </a>
         <figcaption>Pedidos por mayoreo</figcaption>
       </figure>
