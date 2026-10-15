@@ -4,14 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Colores de Melamina y MDF | Triplay y Molduras Los Pinos</title>
-<meta name="description" content="20 colores de MDF melamínico y triplay para muebles, closets y cocinas. Cortes a medida y enchapado de canto. Pregunta disponibilidad por WhatsApp.">
+<meta name="description" content="26 colores de MDF melamínico y triplay para muebles, closets y cocinas. Cortes a medida y enchapado de canto. Pregunta disponibilidad por WhatsApp.">
 <link rel="canonical" href="https://triplaylospinos.com/melamina-mdf.html">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="es_MX">
 <meta property="og:url" content="https://triplaylospinos.com/melamina-mdf.html">
 <meta property="og:site_name" content="Triplay y Molduras Los Pinos">
 <meta property="og:title" content="Colores de Melamina y MDF — Triplay y Molduras Los Pinos">
-<meta property="og:description" content="20 colores de MDF melamínico y triplay para muebles, closets y cocinas. Cortes a medida y enchapado de canto.">
+<meta property="og:description" content="26 colores de MDF melamínico y triplay para muebles, closets y cocinas. Cortes a medida y enchapado de canto.">
 <meta property="og:image" content="https://triplaylospinos.com/trabajos/logo-tlp.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <style>
@@ -69,8 +69,12 @@
   .destacadas{display:grid; grid-template-columns:repeat(auto-fill,minmax(180px,1fr)); gap:14px; margin-bottom:54px;}
   .destacadas img{width:100%; aspect-ratio:1; object-fit:cover; border-radius:14px; border:1px solid var(--borde);}
 
-  .grid-colores{display:grid; grid-template-columns:repeat(2,1fr); gap:12px; margin-bottom:16px;}
-  @media (min-width:600px){ .grid-colores{grid-template-columns:repeat(auto-fill,minmax(190px,1fr)); gap:16px;} }
+  /* flex en vez de grid: si la ultima fila queda incompleta, sus tarjetas quedan centradas */
+  .grid-colores{display:flex; flex-wrap:wrap; justify-content:center; gap:12px; margin-bottom:16px;}
+  .grid-colores .color-card{flex:0 0 calc((100% - 12px) / 2); min-width:0;}
+  @media (min-width:600px){ .grid-colores{gap:16px;} .grid-colores .color-card{flex-basis:calc((100% - 2 * 16px) / 3);} }
+  @media (min-width:820px){ .grid-colores .color-card{flex-basis:calc((100% - 3 * 16px) / 4);} }
+  @media (min-width:1040px){ .grid-colores .color-card{flex-basis:calc((100% - 4 * 16px) / 5);} }
   .color-card{background:#fff; border:1px solid var(--borde); border-radius:14px; overflow:hidden; transition:transform .15s, box-shadow .15s;}
   .color-card:hover{transform:translateY(-3px); box-shadow:0 10px 24px rgba(31,61,46,.12);}
   .ver-grande{display:block; background:#e9e6df; cursor:zoom-in;}
@@ -117,7 +121,7 @@
 
 <section class="hero">
   <div class="kicker">Melamina · MDF · Triplay</div>
-  <h1>20 colores para tu mueble, closet o cocina</h1>
+  <h1>26 colores para tu mueble, closet o cocina</h1>
   <p>MDF melamínico y triplay cortado a la medida que necesites. También ofrecemos enchapado de canto.</p>
   <div class="hero-cta">
     <a class="btn btn-naranja" href="https://wa.me/5214436859057?text=Hola,%20quiero%20cotizar%20MDF%20melam%C3%ADnico" target="_blank" rel="noopener">Cotiza por WhatsApp</a>
@@ -175,6 +179,12 @@
         <figcaption>Gris Claro</figcaption>
       </figure>
       <figure class="color-card">
+        <a class="ver-grande" href="trabajos/colores/concreto-g.jpg" data-nombre="Concreto" target="_blank" rel="noopener" aria-label="Ver Concreto en grande">
+          <img src="trabajos/colores/concreto.jpg" alt="Muestra de melamina color Concreto" width="600" height="800" loading="lazy">
+        </a>
+        <figcaption>Concreto</figcaption>
+      </figure>
+      <figure class="color-card">
         <a class="ver-grande" href="trabajos/colores/linoza-g.jpg" data-nombre="Linoza" target="_blank" rel="noopener" aria-label="Ver Linoza en grande">
           <img src="trabajos/colores/linoza.jpg" alt="Muestra de melamina color Linoza" width="600" height="800" loading="lazy">
         </a>
@@ -193,6 +203,12 @@
         <figcaption>Roble Cocoa</figcaption>
       </figure>
       <figure class="color-card">
+        <a class="ver-grande" href="trabajos/colores/cenizo-g.jpg" data-nombre="Cenizo" target="_blank" rel="noopener" aria-label="Ver Cenizo en grande">
+          <img src="trabajos/colores/cenizo.jpg" alt="Muestra de melamina color Cenizo" width="600" height="800" loading="lazy">
+        </a>
+        <figcaption>Cenizo</figcaption>
+      </figure>
+      <figure class="color-card">
         <a class="ver-grande" href="trabajos/colores/noruego-g.jpg" data-nombre="Noruego" target="_blank" rel="noopener" aria-label="Ver Noruego en grande">
           <img src="trabajos/colores/noruego.jpg" alt="Muestra de melamina color Noruego" width="600" height="800" loading="lazy">
         </a>
@@ -205,10 +221,28 @@
         <figcaption>Gris Oxford</figcaption>
       </figure>
       <figure class="color-card">
+        <a class="ver-grande" href="trabajos/colores/luzan-g.jpg" data-nombre="Luzán" target="_blank" rel="noopener" aria-label="Ver Luzán en grande">
+          <img src="trabajos/colores/luzan.jpg" alt="Muestra de melamina color Luzán" width="600" height="800" loading="lazy">
+        </a>
+        <figcaption>Luzán</figcaption>
+      </figure>
+      <figure class="color-card">
+        <a class="ver-grande" href="trabajos/colores/rosa-morada-g.jpg" data-nombre="Rosa Morada" target="_blank" rel="noopener" aria-label="Ver Rosa Morada en grande">
+          <img src="trabajos/colores/rosa-morada.jpg" alt="Muestra de melamina color Rosa Morada" width="600" height="800" loading="lazy">
+        </a>
+        <figcaption>Rosa Morada</figcaption>
+      </figure>
+      <figure class="color-card">
         <a class="ver-grande" href="trabajos/colores/tabasco-g.jpg" data-nombre="Tabasco" target="_blank" rel="noopener" aria-label="Ver Tabasco en grande">
           <img src="trabajos/colores/tabasco.jpg" alt="Muestra de melamina color Tabasco" width="600" height="800" loading="lazy">
         </a>
         <figcaption>Tabasco</figcaption>
+      </figure>
+      <figure class="color-card">
+        <a class="ver-grande" href="trabajos/colores/nogal-natura-g.jpg" data-nombre="Nogal Natura" target="_blank" rel="noopener" aria-label="Ver Nogal Natura en grande">
+          <img src="trabajos/colores/nogal-natura.jpg" alt="Muestra de melamina color Nogal Natura" width="600" height="800" loading="lazy">
+        </a>
+        <figcaption>Nogal Natura</figcaption>
       </figure>
       <figure class="color-card">
         <a class="ver-grande" href="trabajos/colores/nogal-tzalam-g.jpg" data-nombre="Nogal Tzalam" target="_blank" rel="noopener" aria-label="Ver Nogal Tzalam en grande">
@@ -245,6 +279,12 @@
           <img src="trabajos/colores/nogal-oscuro-mate.jpg" alt="Muestra de melamina color Nogal Oscuro Mate" width="600" height="800" loading="lazy">
         </a>
         <figcaption>Nogal Oscuro Mate</figcaption>
+      </figure>
+      <figure class="color-card">
+        <a class="ver-grande" href="trabajos/colores/marmol-negro-g.jpg" data-nombre="Mármol Negro" target="_blank" rel="noopener" aria-label="Ver Mármol Negro en grande">
+          <img src="trabajos/colores/marmol-negro.jpg" alt="Muestra de melamina color Mármol Negro" width="600" height="800" loading="lazy">
+        </a>
+        <figcaption>Mármol Negro</figcaption>
       </figure>
       <figure class="color-card">
         <a class="ver-grande" href="trabajos/colores/negro-g.jpg" data-nombre="Negro" target="_blank" rel="noopener" aria-label="Ver Negro en grande">
